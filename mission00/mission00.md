@@ -1,6 +1,20 @@
 # mission00 과제 내용
 
 #### 객체에서 특정 키의 값을 가져오는 함수 생성 `getValueAtObject`
+```javascript
+const getValueAtObject = (obj, key) => {
+  if (typeof obj !== 'object' || Object.is(obj, null))
+    throw new Error(
+      `첫번째 인수에는 객체가 와야해요. '${obj}'은/는 객체가 아니에요`
+    );
+
+  if (Object.prototype.hasOwnProperty.call(obj, key)) {
+    return obj[key];
+  } else {
+    throw new Error(`'${key}'라는 key가 해당 객체에 존재하지 않아요`);
+  }
+};
+```
 
 - 특정 키 값을 안전하게 가져오기
 
@@ -13,6 +27,20 @@
 <br>
 
 #### 배열에서 특정 인덱스의 값을 가져오는 함수 생성 `getNumberAtArray`
+```javascript
+const getNumberAtArray = (arr, index) => {
+  if (!Array.isArray(arr))
+    throw new Error(
+      `첫번째 인수에는 배열이 와야해요. '${arr}'은/는 배열이 아니에요`
+    );
+
+  if (index >= 0 && index < arr.length) {
+    return arr[index];
+  } else {
+    throw new Error('유효하지 않은 인덱스임');
+  }
+};
+```
 
 - 첫번째 인수인 `arr` 가 배열이 아니라면 `throw new Error` 처리
 - 배열 내에 유효한 인덱스가 아니라면 `throw new Error` 처리
