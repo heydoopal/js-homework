@@ -40,6 +40,8 @@ loginButton.addEventListener('click', (event) => {
   if (emailValid && passwordValid) {
     if (emailInput.value === user.id && passwordInput.value === user.pw) {
       window.location.href = 'welcome.html';
+      emailInput.value = '';
+      passwordInput.value = '';
     } else {
       alert('아이디 또는 비밀번호가 일치하지 않습니다.');
     }
