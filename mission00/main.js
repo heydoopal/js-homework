@@ -1,5 +1,4 @@
-import { getNumberAtArray } from './utils/getNumberAtArray.js';
-import { getValueAtObject } from './utils/getValueAtObject.js';
+import { getNumberAtArray, getValueAtObject } from './lib/utils/getData.js';
 
 const person = {
   name: 'Alice',
