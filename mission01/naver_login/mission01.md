@@ -87,5 +87,7 @@ loginButton.addEventListener('click', (event) => {
       - 일치 : `welcome` 페이지로 이동
       - 불일치 : 일치하지 않는다구 alert
   - 하나라도 참이 아니라면 올바르게 입력하라고 alert
+  - 로그인 이후 input 필드가 초기화 되지 않고 유저 정보가 남아있는 현상이 생겼음
+    - `emailInput.value = ''` 코드를 추가하여 페이지 이동 후에는 입력 필드 초기화 해줬음..
 
 <br>
