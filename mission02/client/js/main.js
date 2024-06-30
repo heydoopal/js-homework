@@ -1,4 +1,5 @@
 import { data } from './data.js';
+import { AudioPlayer } from './audio.js';
 import { setBgColor, setImage, setNameText } from '../lib/utils/index.js';
 
 /* 
@@ -17,6 +18,7 @@ import { setBgColor, setImage, setNameText } from '../lib/utils/index.js';
 const nav = document.querySelector('nav');
 const poster = document.querySelector('.visual div img');
 const nickName = document.querySelector('.nickName');
+const audioPlayer = new AudioPlayer();
 
 function handleClick(e) {
   const targetLi = e.target.closest('li');
@@ -33,5 +35,9 @@ function handleClick(e) {
   setBgColor(selectedData.color);
   setImage(poster, selectedData);
   setNameText(nickName, selectedData.name);
+
+  const audioSrc = `./assets/audio/${selectedData.name.toLowerCase()}.m4a`;
+  audioPlayer.setSource(audioSrc);
+  audioPlayer.play();
 }
 nav.addEventListener('click', handleClick);
