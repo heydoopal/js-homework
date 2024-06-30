@@ -41,7 +41,7 @@ nav.addEventListener('click', handleClick);
 - `handleClick` 함수는 클릭된 썸네일을 기반으로 배경 색상, 이미지, 텍스트, 오디오를 변경함
   - 클릭된 `li` 요소를 찾고 모든 `li`요소에서 `is-active` 클래스를 제거한 후 클릭된 요소에 추가
   - `setBgColor` / `setImage` / `setNameText` 함수를 호출해서 각 요소를 업데이트 함
-  - 오디오 파일 경로를 설정하고 재생
+  - 오디오 플레이어 객체 생성 > 파일 경로 설정하고 재생
 
 <br>
 
